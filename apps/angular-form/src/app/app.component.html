@@ -1,0 +1,40 @@
+<div gdAuto style="padding: 10px;">
+  <div fxFlex="500px" fxFlex.xs="100" fxFlexOffset="calc(50% - 250px)" fxFlexOffset.xs="0" fxLayout="row wrap">
+    <mat-card fxFlex="100" fxLayout="row wrap" class="mat-elevation-z1">
+      <form fxFlex="100" fxLayout="row wrap" [formGroup]="myform" (submit)="submit()">
+        <mat-form-field fxFlex="100">
+          <input matInput formControlName="name" placeholder="Name">
+          <mat-error *ngIf="myform.controls['name'].touched && myform.controls['name'].hasError('required')">Your name is required!</mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="100">
+          <input matInput formControlName="age" placeholder="Your Age">
+          <mat-error *ngIf="myform.controls['age'].touched && myform.controls['age'].hasError('ageLimit')">The age limit is between 18 and 60 years!</mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="100">
+          <input matInput formControlName="email" placeholder="Email">
+          <mat-error *ngIf="myform.controls['email'].touched && myform.controls['email'].hasError('email')">Please enter a valid email address</mat-error>
+          <mat-error *ngIf="myform.controls['email'].touched && myform.controls['email'].hasError('emailDomain')">Email address must be from theinfogrid.com</mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="100">
+          <input matInput formControlName="password" placeholder="Password">
+          <mat-error *ngIf="myform.controls['password'].touched && myform.controls['password'].hasError('required')">Password is required</mat-error>
+          <mat-error *ngIf="myform.controls['confirmPassword'].touched && myform.controls['confirmPassword'].hasError('NoPassswordMatch')">
+            Your password and confirm password do not match</mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="100">
+          <input matInput formControlName="confirmPassword" placeholder="Confirm Password">
+          <mat-error *ngIf="myform.controls['confirmPassword'].touched && myform.controls['confirmPassword'].hasError('required')">Confirm Password is required</mat-error>
+          <mat-error *ngIf="myform.controls['confirmPassword'].touched && myform.controls['confirmPassword'].hasError('NoPassswordMatch')">
+            Your password and confirm password do not match</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">
+          Submit
+        </button>
+      </form>
+    </mat-card>
+  </div>
+</div>

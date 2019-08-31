@@ -15,7 +15,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ddotclass/ui-material": ["libs/ui-material/src/index.ts"],
+      "@ddotclass/validators": ["libs/validators/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

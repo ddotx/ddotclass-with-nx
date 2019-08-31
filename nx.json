@@ -7,5 +7,24 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "angular-form-e2e": {
+      "tags": []
+    },
+    "angular-form": {
+      "tags": []
+    },
+    "ui-material": {
+      "tags": []
+    },
+    "af-bootstrap-e2e": {
+      "tags": []
+    },
+    "af-bootstrap": {
+      "tags": []
+    },
+    "validators": {
+      "tags": []
+    }
+  }
 }
