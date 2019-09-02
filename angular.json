@@ -285,6 +285,198 @@
         }
       },
       "schematics": {}
+    },
+    "form": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "apps/form",
+      "sourceRoot": "apps/form/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/form",
+            "index": "apps/form/src/index.html",
+            "main": "apps/form/src/main.ts",
+            "polyfills": "apps/form/src/polyfills.ts",
+            "tsConfig": "apps/form/tsconfig.app.json",
+            "aot": false,
+            "assets": ["apps/form/src/favicon.ico", "apps/form/src/assets"],
+            "styles": ["apps/form/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/form/src/environments/environment.ts",
+                  "with": "apps/form/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "form:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "form:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "form:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/form/tsconfig.app.json",
+              "apps/form/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/form/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/form/jest.config.js",
+            "tsConfig": "apps/form/tsconfig.spec.json",
+            "setupFile": "apps/form/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "form-e2e": {
+      "root": "apps/form-e2e",
+      "sourceRoot": "apps/form-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/form-e2e/cypress.json",
+            "tsConfig": "apps/form-e2e/tsconfig.e2e.json",
+            "devServerTarget": "form:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "form:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/form-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/form-e2e/**"]
+          }
+        }
+      }
+    },
+    "ui-navbar": {
+      "projectType": "library",
+      "root": "libs/ui-navbar",
+      "sourceRoot": "libs/ui-navbar/src",
+      "prefix": "app",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-navbar/tsconfig.lib.json",
+              "libs/ui-navbar/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-navbar/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-navbar/jest.config.js",
+            "tsConfig": "libs/ui-navbar/tsconfig.spec.json",
+            "setupFile": "libs/ui-navbar/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "model": {
+      "projectType": "library",
+      "root": "libs/model",
+      "sourceRoot": "libs/model/src",
+      "prefix": "ddotclass",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/model/tsconfig.lib.json",
+              "libs/model/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/model/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/model/jest.config.js",
+            "tsConfig": "libs/model/tsconfig.spec.json",
+            "setupFile": "libs/model/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "services": {
+      "projectType": "library",
+      "root": "libs/services",
+      "sourceRoot": "libs/services/src",
+      "prefix": "ddotclass",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/services/tsconfig.lib.json",
+              "libs/services/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/services/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/services/jest.config.js",
+            "tsConfig": "libs/services/tsconfig.spec.json",
+            "setupFile": "libs/services/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
     }
   },
   "cli": {
@@ -299,5 +491,5 @@
       "unitTestRunner": "jest"
     }
   },
-  "defaultProject": "af-bootstrap"
+  "defaultProject": "form"
 }

@@ -25,6 +25,21 @@
     },
     "validators": {
       "tags": []
+    },
+    "form-e2e": {
+      "tags": []
+    },
+    "form": {
+      "tags": []
+    },
+    "ui-navbar": {
+      "tags": []
+    },
+    "model": {
+      "tags": []
+    },
+    "services": {
+      "tags": []
     }
   }
 }

@@ -1,0 +1,15 @@
+/* .ng-invalid:not(form).ng-touched {
+    border: 2px solid red;
+} */
+
+.field-error {
+  border: 2px solid orange;
+}
+
+.success {
+  color: green;
+}
+
+.notsuccess {
+  color: red;
+}
