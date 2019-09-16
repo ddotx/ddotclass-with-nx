@@ -20,7 +20,8 @@
       "@ddotclass/validators": ["libs/validators/src/index.ts"],
       "@ddotclass/ui-navbar": ["libs/ui-navbar/src/index.ts"],
       "@ddotclass/model": ["libs/model/src/index.ts"],
-      "@ddotclass/services": ["libs/services/src/index.ts"]
+      "@ddotclass/services": ["libs/services/src/index.ts"],
+      "@ddotclass/ui-ngx": ["libs/ui-ngx/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
