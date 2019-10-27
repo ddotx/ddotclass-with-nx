@@ -219,18 +219,10 @@
             id="subscriptionType"
             name="subscriptionType"
             class="form-control"
-            formControlName="subscriptionType"
           >
             <option></option>
           </select>
-          <div
-            [hidden]="
-              !isSubmitted || reactiveForm.get('subscriptionType').valid
-            "
-            class="alert alert-danger"
-          >
-            Please Select
-          </div>
+          
         </div>
 
         <div class="form-group">

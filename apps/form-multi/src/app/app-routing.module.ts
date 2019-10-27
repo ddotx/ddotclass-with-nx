@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'form-template', component: UserSettingsFormComponent },
   { path: 'form-reactive', component: ReactiveFormComponent },
+  { path: 'products', loadChildren: './product/product.module#ProductModule'}
 ];
 
 @NgModule({

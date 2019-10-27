@@ -11,6 +11,7 @@ import { UserSettingsFormComponent } from './user-settings-form/user-settings-fo
 
 import {UiNgxModule} from '@ddotclass/ui-ngx'
 import { HttpClientModule } from '@angular/common/http';
+import { ProductModule } from './product/product.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, ReactiveFormComponent, UserSettingsFormComponent],
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     AppRoutingModule,
     CoreModule,
-    UiNgxModule
+    UiNgxModule,
+    ProductModule
   ],
   providers: [],
   bootstrap: [AppComponent]
