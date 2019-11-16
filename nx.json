@@ -40,6 +40,12 @@
     },
     "form-multi": {
       "tags": []
+    },
+    "point-exchange-e2e": {
+      "tags": []
+    },
+    "point-exchange": {
+      "tags": []
     }
   }
 }
